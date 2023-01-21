@@ -6,7 +6,7 @@ import { LoggingService } from '../logging.service';
   selector: 'app-new-account',
   templateUrl: './new-account.component.html',
   styleUrls: ['./new-account.component.css'],
-  providers:[LoggingService]  //due to hierarchical injector concept. We dont have to use accountService since its available in app.component
+  //providers:[LoggingService]  //due to hierarchical injector concept. We dont have to use accountService since its available in app.component
 })
 export class NewAccountComponent {
   constructor(private loggingService:LoggingService, 
@@ -16,7 +16,7 @@ export class NewAccountComponent {
 
   onCreateAccount(accountName: string, accountStatus: string) {
     this.accountService.addAccount(accountName, accountStatus)
-    this.loggingService.logStatusChange(accountStatus);
+    //this.loggingService.logStatusChange(accountStatus);
    // console.log('A server status changed, new status: ' + accountStatus);
   }
 }
